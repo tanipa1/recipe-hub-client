@@ -30,7 +30,7 @@ const AddRecipe = () => {
                     const recipes = { recipe_name, recipe_provider, email, video, category, ingredients, description, recipe_photo: imgURL, user_photo: user?.photoURL }
                     console.log(recipes);
 
-                    fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/recipes', {
+                    fetch('http://localhost:5000/recipes', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -57,42 +57,42 @@ const AddRecipe = () => {
     return (
         <div className='pb-12'>
             {/* banner */}
-            <div className="hero p-7 mb-20" style={{ backgroundImage: 'url(https://img.freepik.com/premium-photo/cheese-fruit-meat-board-dark-background-seen-from-top-with-empty-space-text_176841-11221.jpg?w=1060)' }}>
+            <div className="hero p-7 lg:mb-10 mb-5" style={{ backgroundImage: 'url(https://img.freepik.com/premium-photo/cheese-fruit-meat-board-dark-background-seen-from-top-with-empty-space-text_176841-11221.jpg?w=1060)' }}>
                 <div className="hero-overlay bg-[#f8cf5f] bg-opacity-40"></div>
                 <div className="hero-content text-white">
                     <div className="max-w-md">
-                        <h1 className=" text-center text-5xl font-serif font-bold">Share Your Recipe</h1>
+                        <h1 className=" text-center text-xl lg:text-5xl font-serif font-bold">Share Your Recipe</h1>
                     </div>
                 </div>
             </div>
             {/* banner */}
 
             {/* form */}
-            <form onSubmit={handleSubmit(onSubmit)} className="bg-gradient-to-b from-[#f8cf5f] to-white mx-2 lg:mx-48 shadow-2xl lg:px-20 py-12 rounded-xl ">
-                <div className="lg:flex justify-between gap-12 mb-6 w-full">
-                    <div className="flex items-center gap-14">
+            <form onSubmit={handleSubmit(onSubmit)} className="bg-gradient-to-b from-[#f8cf5f] to-white mx-2 lg:mx-48 lg:shadow-2xl lg:px-20 px-4 py-12 rounded-xl">
+                <div className="lg:flex gap-3 justify-between mb-6 w-full">
+                    <div className="mb-3 lg:mb-0 lg:w-1/2">
                         <p className="font-mono">Recipe </p>
-                        <input className="input input-bordered" type="text" {...register("recipe_name", { required: true, maxLength: 80 })} placeholder="Enter Recipe Name" id="" />
+                        <input className="input w-full input-bordered" type="text" {...register("recipe_name", { required: true, maxLength: 80 })} placeholder="Enter Recipe Name" id="" />
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="mb-3 lg:mb-0 lg:w-1/2">
                         <p className="font-mono">Video</p>
-                        <input className="input input-bordered" type="url" {...register("video", { required: true, maxLength: 80 })} placeholder="Recipe Video Link" id="" />
+                        <input className="input w-full input-bordered" type="url" {...register("video", { required: true, maxLength: 80 })} placeholder="Recipe Video Link" id="" />
                     </div>
                 </div>
-                <div className="lg:flex justify-between gap-12 mb-6">
-                    <div className="flex items-center gap-7">
+                <div className="lg:flex justify-between gap-3 mb-6">
+                    <div className="mb-3 lg:mb-0 lg:w-1/2">
                         <p className="font-mono">Your  Name</p>
-                        <input className="input input-bordered" defaultValue={user?.displayName} type="text" {...register("recipe_provider", { required: true, maxLength: 80 })} placeholder="Enter your Name" id="" />
+                        <input className="input w-full input-bordered" defaultValue={user?.displayName} type="text" {...register("recipe_provider", { required: true, maxLength: 80 })} placeholder="Enter your Name" id="" />
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="mb-3 lg:mb-0 lg:w-1/2">
                         <p className="font-mono">Email</p>
-                        <input className="input input-bordered" type="email" {...register("email", { required: true, maxLength: 80 })} defaultValue={user?.email} placeholder="Enter Your Email" id="" />
+                        <input className="input w-full input-bordered" type="email" {...register("email", { required: true, maxLength: 80 })} defaultValue={user?.email} placeholder="Enter Your Email" id="" />
                     </div>
                 </div>
-                <div className="lg:flex justify-between gap-14 mb-6">
-                    <div className="flex items-center gap-10">
+                <div className="lg:flex justify-between gap-3 mb-6">
+                    <div className="mb-3 lg:mb-0 lg:w-1/2">
                         <p className="font-mono">Category</p>
-                        <select id="countries" {...register("category", { required: true })} className=" text-gray-900 text-sm rounded-md w-52 focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select id="countries" {...register("category", { required: true })} className="w-full text-gray-900 lg:text-sm text-xs rounded-md focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Choose a category</option>
                             <option value="breakfast-delights">Breakfast Delights</option>
                             <option value="comfort-food-classics">Comfort Food Classics</option>
@@ -112,9 +112,9 @@ const AddRecipe = () => {
                             <option value="others">Others</option>
                         </select>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="mb-3 lg:mb-0 lg:w-1/2">
                         <p className="font-mono">Photo</p>
-                        <input type="file" {...register("recipe_photo", { required: true })} className="file-input file-input-bordered w-full max-w-xs" />
+                        <input type="file" {...register("recipe_photo", { required: true })} className="file-input file-input-bordered w-full " />
                     </div>
                 </div>
 

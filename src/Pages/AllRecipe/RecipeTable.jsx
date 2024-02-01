@@ -9,7 +9,7 @@ const RecipeTable = ({recipe}) => {
             <tr>
                 <td>
                     <div className="flex items-center space-x-3">
-                        <div className="w-24 h-24 hidden lg:flex rounded-xl">
+                        <div className="lg:w-24 h-24 hidden lg:flex rounded-xl">
                             <img src={recipe_photo} />
                         </div>
                         <div>
