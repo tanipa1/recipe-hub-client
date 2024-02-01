@@ -26,41 +26,41 @@ const Register = () => {
             method: 'POST',
             body: formData
         })
-        .then(res => res.json())
+            .then(res => res.json())
             .then(imgResponse => {
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
                     createUser(data.email, data.password)
-                    .then(result =>{
-                        const loggedUser = result.user;
-                        console.log(loggedUser);
-                        updateUserProfile(data.name, imgURL)
-                        .then(() =>{
-                            const saveUser = {name: data.name, email: data.email, photo: imgURL}
-                            fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/users',{
-                                method: 'POST',
-                                headers: {
-                                    'content-type': 'application/json'
-                                },
-                                body: JSON.stringify(saveUser)
-                            })
-                            .then(res => res.json())
-                            .then(data => {
-                                if(data.insertedId){
-                                    Swal.fire({
-                                        icon: 'success',
-                                        title: "User created successfully",
-                                        showConfirmButton: false,
-                                        timer: 1500
-                                    });
-                                    navigate('/')
-                                }
-                            })               
-                        })               
-                    })
-                    .catch(error =>{
-                        console.log(error);
-                    })
+                        .then(result => {
+                            const loggedUser = result.user;
+                            console.log(loggedUser);
+                            updateUserProfile(data.name, imgURL)
+                                .then(() => {
+                                    const saveUser = { name: data.name, email: data.email, photo: imgURL }
+                                    fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/users', {
+                                        method: 'POST',
+                                        headers: {
+                                            'content-type': 'application/json'
+                                        },
+                                        body: JSON.stringify(saveUser)
+                                    })
+                                        .then(res => res.json())
+                                        .then(data => {
+                                            if (data.insertedId) {
+                                                Swal.fire({
+                                                    icon: 'success',
+                                                    title: "User created successfully",
+                                                    showConfirmButton: false,
+                                                    timer: 1500
+                                                });
+                                                navigate('/')
+                                            }
+                                        })
+                                })
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        })
                 }
             })
     }
@@ -108,7 +108,7 @@ const Register = () => {
         <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg?w=1060&t=st=1692287315~exp=1692287915~hmac=cc1c7407d9a0c2226dcbf215af6c79a01382f45f78611c9415580e3ea17253e4)' }}>
 
             <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content text-center text-neutral-content">
+            <div className="text-center text-neutral-content">
                 <Particles
                     id="tsparticles"
                     init={particlesInit}
@@ -178,62 +178,63 @@ const Register = () => {
                         detectRetina: true,
                     }}
                 />
-                <div className="max-w-md">
-                    <div className="card p-8 flex-shrink-0 w-full max-w-md shadow-2xl bg-black">
-                        <h1 className="font-bold text-2xl">Register Here</h1>
+                <div className="max-w-md mx-auto p-4 sm:p-8">
+                    <div className="card justify-center flex-shrink-0 w-full max-w-md shadow-2xl bg-black lg:p-8 py-2">
+                        <h1 className="font-bold text-2xl text-white text-center">Register Here</h1>
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                            <div className="form-control">
+                            <div className="form-control mb-4">
                                 <label className="label">
                                     <span className="label-text text-[#f8cf5f] font-semibold text-lg">Name</span>
                                 </label>
                                 <input type="text" {...register("name", { required: true })} placeholder="Your Name" className="input text-black input-bordered" />
                                 {errors.name && <span className='text-red-600'>Name is required*</span>}
                             </div>
-                            <div className="form-control">
+                            <div className="form-control mb-4">
                                 <label className="label">
                                     <span className="label-text text-[#f8cf5f] font-semibold text-lg">Photo URL</span>
                                 </label>
                                 <input type="file" {...register("photo", { required: true })} className="file-input file-input-bordered file-input-warning w-full max-w-xs" />
                                 {errors.photoURL && <span className='text-red-600'>Photo is required*</span>}
                             </div>
-                            <div className="form-control">
+                            <div className="form-control mb-4">
                                 <label className="label">
                                     <span className="label-text text-[#f8cf5f] font-semibold text-lg">Email</span>
                                 </label>
                                 <input type="email" {...register("email", { required: true })} placeholder="example@email.com" className="input text-black input-bordered" />
                                 {errors.email && <span className='text-red-600'>Email is required*</span>}
                             </div>
-                            <div className="form-control">
+                            <div className="form-control mb-4">
                                 <label className="label">
                                     <span className="label-text font-semibold text-lg text-[#f8cf5f] ">Password</span>
                                 </label>
                                 <input type="password" {...register("password", {
-                                required: true,
-                                minLength: 6,
-                                pattern: /^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/ // Password pattern with at least one capital letter and one special character
-                            })} placeholder="password" className="input input-bordered" />
-                            {errors.password?.type === 'required' && <p className='text-red-600'>Password is required</p>}
-                            {errors.password?.type === 'minLength' && <p className='text-red-600'>Password length is less than 6</p>}
-                            {errors.password && errors.password.type === "pattern" && (
-                                <span className="text-red-600">Password must have at least one capital letter and one special character</span>
-                            )}
+                                    required: true,
+                                    minLength: 6,
+                                    pattern: /^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/ // Password pattern with at least one capital letter and one special character
+                                })} placeholder="password" className="input input-bordered" />
+                                {errors.password?.type === 'required' && <p className='text-red-600'>Password is required</p>}
+                                {errors.password?.type === 'minLength' && <p className='text-red-600'>Password length is less than 6</p>}
+                                {errors.password && errors.password.type === "pattern" && (
+                                    <span className="text-red-600">Password must have at least one capital letter and one special character</span>
+                                )}
                             </div>
-                            <div className="form-control mt-6">
-                                <input type="submit" className="btn login font-bold" value="Register" />
+                            <div className="form-control mb-6">
+                                <input type="submit" className="btn login font-bold w-full" value="Register" />
                             </div>
                         </form>
-                        <div className="form-control text-center mx-auto">
+                        <div className="form-control text-center mx-auto mb-4">
                             <p><small>Already have an Account? <Link to='/login' className="text-[#f8cf5f] font-bold">Login</Link></small></p>
                         </div>
-                        <div className="divider before:bg-primary after:bg-secondary">OR</div>
-                        <div className="form-control mt-3">
-                            <button onClick={handleGoogleLogIn} className=" btn-primary btn ">
+                        <div className="divider before:bg-primary after:bg-secondary mb-4">OR</div>
+                        <div className="form-control mb-4">
+                            <button onClick={handleGoogleLogIn} className="btn-primary btn w-full">
                                 <svg className='me-3' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 262"><path fill="#4285F4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027" /><path fill="#34A853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1" /><path fill="#FBBC05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782" /><path fill="#EB4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251" /></svg>
                                 Sign in with Google
                             </button>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     );

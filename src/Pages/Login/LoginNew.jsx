@@ -71,7 +71,7 @@ const LoginNew = () => {
         <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg?w=1060&t=st=1692287315~exp=1692287915~hmac=cc1c7407d9a0c2226dcbf215af6c79a01382f45f78611c9415580e3ea17253e4)' }}>
 
             <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content text-center text-neutral-content">
+            <div className=" text-center text-neutral-content">
                 <Particles
                     id="tsparticles"
                     init={particlesInit}
@@ -141,8 +141,8 @@ const LoginNew = () => {
                         detectRetina: true,
                     }}
                 />
-                <div className="max-w-md">
-                    <div className="card p-8 flex-shrink-0 w-full max-w-md shadow-2xl bg-black">
+                <div className="max-w-md mx-auto p-4 sm:p-8">
+                    <div className="card justify-center flex-shrink-0 w-full max-w-md shadow-2xl bg-black p-4 sm:p-8 py-2">
                         <h1 className="font-bold text-2xl">Login Here</h1>
                         <form onSubmit={handleSignIn} className="card-body">
                             <div className="form-control">
