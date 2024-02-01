@@ -51,54 +51,59 @@ const AddSeller = () => {
     return (
         <div className="hero min-h-screen bg-gradient-to-b from-[#491B15] to-white">
 
-            <form onSubmit={registerSeller} className="bg-base-100 mx-2 lg:mx-48 shadow-2xl lg:px-24 py-12 rounded-xl ">
-                <h1 className="text-center text-white mb-10 font-bold text-2xl font-serif bg-gradient-to-b from-[black] to-[#C87F0D] py-5">Become a Homemade Seller</h1>
+    <form onSubmit={registerSeller} className="bg-base-100 mx-2 lg:mx-48 shadow-2xl lg:px-24 px-10 py-12 rounded-xl">
+        <h1 className="text-center text-white mb-10 font-bold text-2xl font-serif bg-gradient-to-b from-[black] to-[#C87F0D] py-5">Become a Homemade Seller</h1>
 
-                <div className="flex gap-12 mb-6">
-                    <div className="flex items-center gap-3">
-                        <p className="font-mono">Seller  Name</p>
-                        <input className="input input-bordered" defaultValue={user?.displayName} type="text" name="name" placeholder="Seller Name" id="" />
-                    </div>
-                    <div className="flex items-center gap-3">
-                        <p className="font-mono">Email</p>
-                        <input className="input input-bordered" type="email" name="email" defaultValue={user?.email} placeholder="Seller Email" id="" />
-                    </div>
-                </div>
-                <div className="lg:flex gap-12 mb-6">
-                    <div className="lg:flex items-center gap-12">
-                        <p className="font-mono">Contact</p>
-                        <input className="input input-bordered" type="text" name="contact" placeholder="Seller Contact No." id="" />
-                    </div>
-                    <div className="flex items-center gap-3">
-                        <p className="font-mono">Photo</p>
-                        <input className="input input-bordered" type="url" name="photo" defaultValue={user?.photoURL} placeholder="Seller Photo" id="" />
-                    </div>
-                </div>
-                <div className="flex items-center gap-10 mb-6 w-full">
-                    <p className="font-mono">Location</p>
-                    <input className="input input-bordered w-full" type="text" name="location" placeholder="Seller Location" id="" />
-                </div>
-                <div className="flex items-center gap-3">
-                    <p className="font-mono">Description</p>
-                    <textarea className="textarea textarea-bordered h-[100px]  w-full" name="description" placeholder='Type of foods you deliver' id="" cols="10" rows="10"></textarea>
-                </div>
-                <div className="form-control w-1/2 mt-6 mx-auto">
-                    <input type="submit" className="btn font-serif text-white text-lg bg-[#491B15] rounded-3xl" value="Register as Seller" />
-                    <ToastContainer
-                        position="top-center"
-                        autoClose={5000}
-                        hideProgressBar={false}
-                        newestOnTop={false}
-                        closeOnClick
-                        rtl={false}
-                        pauseOnFocusLoss
-                        draggable
-                        pauseOnHover
-                        theme="light"
-                    />
-                </div>
-            </form>
+        <div className="flex flex-col mb-6">
+            <label htmlFor="name" className="font-mono">Seller Name</label>
+            <input className="input input-bordered" defaultValue={user?.displayName} type="text" name="name" placeholder="Seller Name" id="name" />
         </div>
+
+        <div className="flex flex-col mb-6">
+            <label htmlFor="email" className="font-mono">Email</label>
+            <input className="input input-bordered" type="email" name="email" defaultValue={user?.email} placeholder="Seller Email" id="email" />
+        </div>
+
+        <div className="flex flex-col gap-3 lg:flex-row mb-6">
+            <div className="flex flex-col gap-3">
+                <label htmlFor="contact" className="font-mono">Contact</label>
+                <input className="input input-bordered" type="text" name="contact" placeholder="Seller Contact No." id="contact" />
+            </div>
+
+            <div className="flex flex-col gap-3">
+                <label htmlFor="photo" className="font-mono">Photo</label>
+                <input className="input input-bordered" type="url" name="photo" defaultValue={user?.photoURL} placeholder="Seller Photo" id="photo" />
+            </div>
+        </div>
+
+        <div className="flex flex-col mb-6">
+            <label htmlFor="location" className="font-mono">Location</label>
+            <input className="input input-bordered" type="text" name="location" placeholder="Seller Location" id="location" />
+        </div>
+
+        <div className="flex flex-col mb-6">
+            <label htmlFor="description" className="font-mono">Description</label>
+            <textarea className="textarea textarea-bordered h-[100px] w-full" name="description" placeholder='Type of foods you deliver' id="description" cols="10" rows="10"></textarea>
+        </div>
+
+        <div className="form-control w-full mt-6">
+            <input type="submit" className="btn font-serif text-white text-lg bg-[#491B15] rounded-3xl" value="Register as Seller" />
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
+        </div>
+    </form>
+</div>
+
     );
 };
 

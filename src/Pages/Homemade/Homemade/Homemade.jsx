@@ -16,22 +16,22 @@ const Homemade = () => {
                 <div className="hero-overlay bg-black bg-opacity-40"></div>
                 <div className="hero-content text-white lg:-ml-96">
                     <div className="max-w-md">
-                        <h1 className="text-center text-4xl font-serif font-bold">Homemade Food Sellers</h1>
+                        <h1 className="text-center lg:text-4xl text-2xl font-serif font-bold">Homemade Food Sellers</h1>
                     </div>
                 </div>
             </div>
             {/* banner */}
 
             {/* form of food seller*/}
-            <div className='flex px-12 justify-center items-center'>
+            <div className='lg:flex lg:px-12 px-5 justify-center items-center'>
                 <div>
                     <div>
-                        <TypeAnimation className='font-bold  font-mono text-4xl'
-                            style={{
+                        <TypeAnimation className='font-bold text-center lg:text-start lg:block w-[495px] h-[100px] font-mono lg:text-4xl text-xl'
+                            /* style={{
                                 height: '100px',
                                 width: '495px',
                                 display: 'block',
-                            }}
+                            }} */
                             sequence={['Want to become a Homemade Food Seller?', 800]}
                             repeat={1}
                         />
@@ -39,15 +39,15 @@ const Homemade = () => {
                     <Link to='/addSeller'><button className='btn mt-2 border-b-4 btn-outline'>Click Here</button></Link>
                 </div>
 
-                <div>
-                    <img className='w-96' src={want} alt="" />
+                <div className='grid justify-center'>
+                    <img className='lg:w-96 w-72' src={want} alt="" />
                 </div>
             </div>
 
             {/* Seller list */}
-            <h1 className='text-center font-bold w-1/2 mx-auto font-mono text-4xl bg-gradient-to-b rounded-xl mb-10 from-[#491B15] to-black text-white py-2'>Find Your Favorite Seller</h1>
+            <h1 className='text-center font-bold w-1/2 mx-auto font-mono lg:text-4xl bg-gradient-to-b rounded-xl mb-10 from-[#491B15] to-black text-white py-2'>Find Your Favorite Seller</h1>
 
-            <div className='w-full max-w-4xl mb-10 mx-auto p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700'>
+            <div className='w-full lg:max-w-4xl mb-10 mx-auto p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700'>
                 {
                     sellers.map(seller => <Sellers
                         key={seller._id}

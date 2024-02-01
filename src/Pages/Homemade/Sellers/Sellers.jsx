@@ -1,4 +1,5 @@
 import React from 'react';
+import './Sellers.css';
 
 const Sellers = ({ seller }) => {
     const { _id,seller_name, seller_email, seller_photo, contact, location, description } = seller;
@@ -9,20 +10,20 @@ const Sellers = ({ seller }) => {
                     <li class="py-3 sm:py-4">
                         <div class="flex items-center space-x-4">
                             <div class="flex-shrink-0">
-                                <img class="w-24 h-24 rounded-full" src={seller_photo} alt="Neil image" />
+                                <img class="lg:w-24 lg:h-24 w-16 h-16 rounded-full" src={seller_photo} alt="Neil image" />
                             </div>
                             <div class="flex-1 min-w-0">
-                                <p class="text-xl font-bold text-gray-800 truncate ">
+                                <p class="lg:text-xl text-base font-bold text-gray-800 truncate ">
                                     {seller_name}
                                 </p>
-                                <p class="text-base text-gray-800 truncate ">
+                                <p class="lg:text-base text-xs text-gray-800 truncate ">
                                     {seller_email}
                                 </p>
                             </div>
                             {/* You can open the modal using document.getElementById('ID').showModal() method */}
-                            <button className="btn login" onClick={() => document.getElementById(`${_id}`).showModal(_id)}>Contact to Order Food</button>
-                            <dialog id={_id} className="modal">
-                                <div className="modal-box px-10">
+                            <button className="btn btn-xs lg:btn-md login" onClick={() => document.getElementById(`${_id}`).showModal(_id)}>Contact to Order Food</button>
+                            <dialog id={_id} className="modal lg:grid justify-center mx-auto">
+                                <div className="modal-box overflow-y-auto lg:px-10">
                                     <form method="dialog">
                                         {/* if there is a button in form, it will close the modal */}
                                         <button className="btn btn-sm btn-circle btn-error text-white absolute right-2 top-2">✕</button>
