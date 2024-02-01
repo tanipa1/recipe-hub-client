@@ -38,28 +38,42 @@ const UploadedRecipe = ({ recipe }) => {
 
 
     return (
-        <div className='flex  mb-8 items-center gap-3 bg-gray-200 pr-8 lg:px-0 lg:pr-5'>
+        <div className='flex mb-8 items-center gap-3 bg-gray-200 pl-4 pr-8 lg:px-0 lg:pr-5'>
             <img className='lg:w-36 lg:h-36 w-24' src={recipe_photo} alt="" />
             <div className='flex justify-between gap-16 lg:gap-0 items-center lg:grid'>
                 <div>
                     <h1 className='lg:font-bold font-serif lg:text-2xl text-lg'>{recipe_name}</h1>
                     <p className='uppercase hidden lg:flex'><span className='font-bold'>Category: </span>{category}</p>
                 </div>
-                <Link className='lg:ml-0 flex' to={`/recipeDetails/${_id}`}>
-                    <button className='btn lg:btn-sm btn-xs  login mt-2'>
-                        <span className='hidden lg:flex'>Details</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z" /></svg>
-                    </button>
-                </Link>
+                <div className='grid  gap-2'>
+                    <Link className='lg:ml-0 flex px-2 lg:px-0' to={`/recipeDetails/${_id}`}>
+                        <button className='btn lg:btn-sm btn-xs lg:bg-[rgb(248,207,95)] mt-2'>
+                            <span className='hidden lg:flex'>Details</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z" /></svg>
+                        </button>
+                    </Link>
+
+                    <div className='lg:flex-none lg:hidden grid gap-2'>
+                        {user.email == email ?
+                            <button onClick={() => handleDelete(recipe)} className='btn lg:btn-sm btn-xs'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="maroon" d="M7 21q-.825 0-1.413-.588T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.588 1.413T17 21H7Zm2-4h2V8H9v9Zm4 0h2V8h-2v9Z" /></svg></button> : <></>
+                        }
+
+                        {user.email == email ?
+                            <Link className='btn lg:btn-sm btn-xs' to={`/editRecipe/${_id}`}>
+                                <button className='btn lg:btn-sm btn-xs'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="green" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0-2.97-2.97L9 12v3h3l8.385-8.415zM16 5l3 3" /></g></svg></button>
+                            </Link> : <></>
+                        }
+                    </div>
+                </div>
             </div>
-            <div className='flex-none grid gap-4'>
+            <div className='flex-none hidden lg:grid gap-4'>
                 {user.email == email ?
-                    <button onClick={() => handleDelete(recipe)} className='btn btn-sm'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="maroon" d="M7 21q-.825 0-1.413-.588T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.588 1.413T17 21H7Zm2-4h2V8H9v9Zm4 0h2V8h-2v9Z" /></svg>Delete</button> : <></>
+                    <button onClick={() => handleDelete(recipe)} className='btn lg:btn-sm btn-xs'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="maroon" d="M7 21q-.825 0-1.413-.588T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.588 1.413T17 21H7Zm2-4h2V8H9v9Zm4 0h2V8h-2v9Z" /></svg>Delete</button> : <></>
                 }
 
                 {user.email == email ?
-                    <Link className='btn btn-sm' to={`/editRecipe/${_id}`}>
-                        <button className='btn btn-sm'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="green" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0-2.97-2.97L9 12v3h3l8.385-8.415zM16 5l3 3" /></g></svg>Edit</button>
+                    <Link className='btn lg:btn-sm btn-xs' to={`/editRecipe/${_id}`}>
+                        <button className='btn lg:btn-sm btn-xs'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="green" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0-2.97-2.97L9 12v3h3l8.385-8.415zM16 5l3 3" /></g></svg>Edit</button>
                     </Link> : <></>
                 }
             </div>

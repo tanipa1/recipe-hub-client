@@ -202,7 +202,7 @@ const Recipe_Details = () => {
             </div>
 
             {/* Comments */}
-            <div className='px-12 mb-20'>
+            <div className='lg:px-12 grid justify-center lg:justify-start mb-20'>
                 <h1 className='font-bold text-lg'>{/* {comments?.length} */} Comments</h1>
                 <div className='flex gap-3 '>
                     <img className='w-12 rounded-full mt-5' src={user?.photoURL} alt="" />
@@ -212,7 +212,7 @@ const Recipe_Details = () => {
                     </form>
                 </div>
 
-                {comments ? <div className='mt-12 ml-8'>
+                {comments ? <div className='mt-12 ml-5 lg:ml-8'>
                     {
                         comments.filter(filteredComments => filteredComments.recipe_id === _id).map(filteredComment => <Comments
                             key={filteredComment._id}

@@ -37,7 +37,7 @@ const MyProfile = ({ selectedUser }) => {
             {/* banner */}
             <div className="hero p-12" style={{ backgroundImage: 'url(https://img.freepik.com/premium-photo/heartshaped-fried-egg-served-with-toasted-bread-spices-plate-romantic-art-food-idea-valentine-s-breakfast-hard-light-dark-shadow-black-stone-concrete-background-banner-format_164638-19929.jpg?w=1380)' }}>
                 <div className="hero-overlay bg-black bg-opacity-40"></div>
-                <div className="hero-content -ml-96 text-white">
+                <div className="hero-content lg:-ml-96 text-white">
                     <div className="max-w-md">
                         <h1 className="text-center text-3xl font-serif font-bold">Welcome, {selectedUser.name}</h1>
                     </div>
@@ -46,15 +46,15 @@ const MyProfile = ({ selectedUser }) => {
             {/* banner */}
 
             <div className='flex justify-center gap-24 lg:flex-row-reverse'>
-                <div className='w-2/3 mt-10'>
+                <div className='lg:w-2/3 mt-10'>
                     <Tabs>
-                        <TabList className='lg:flex justify-start gap-5 lg:mx-0 mx-20 mb-8'>
+                        <TabList className='flex lg:justify-start justify-center gap-5 lg:mx-0 mb-8'>
                             <Tab><button className='btn bg-black text-white'>Uploaded Recipe</button></Tab>
                             <Tab><button className='btn login'>Saved Recipe</button></Tab>
                         </TabList>
 
                         <TabPanel>
-                            <div className='pr-16'>
+                            <div className='lg:pr-16'>
                                 {
                                     uploadedRecipe.map(recipe => <UploadedRecipe
                                         key={recipe._id}
@@ -64,7 +64,7 @@ const MyProfile = ({ selectedUser }) => {
                             </div>
                         </TabPanel>
                         <TabPanel>
-                        <div className='pr-16 grid grid-cols-3 items-center mb-8'>
+                        <div className='px-8 lg:px-0 grid gap-8 grid-cols-2 lg:grid-cols-3 items-center mb-8'>
                                 {
                                     filteredBookmark.map(bookmark => <Bookmarks
                                         key={bookmark._id}
@@ -75,7 +75,7 @@ const MyProfile = ({ selectedUser }) => {
                         </TabPanel>
                     </Tabs>
                 </div>
-                <div className="card w-80 bg-opacity-60 shadow-xl -top-11">
+                <div className="card hidden lg:flex w-80 bg-opacity-60 shadow-xl -top-11">
                     <div className="avatar online w-50 mx-auto">
                         <div className="w-28 rounded-full">
                             <img src={selectedUser.photo} />
