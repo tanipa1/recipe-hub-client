@@ -6,7 +6,7 @@ const OtherProf = ({user}) => {
     const [recipes, setRecipes] = useState([]);
     
     useEffect(() =>{
-        fetch('http://localhost:5000/recipes')
+        fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/recipes')
         .then(res => res.json())
         .then(data => setRecipes(data))
     },[])

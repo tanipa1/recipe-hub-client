@@ -37,7 +37,7 @@ const Register = () => {
                         updateUserProfile(data.name, imgURL)
                         .then(() =>{
                             const saveUser = {name: data.name, email: data.email, photo: imgURL}
-                            fetch('http://localhost:5000/users',{
+                            fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/users',{
                                 method: 'POST',
                                 headers: {
                                     'content-type': 'application/json'
@@ -70,7 +70,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 const saveUser = { name: user.displayName, email: user.email, photo: user.photoURL }
-                fetch('http://localhost:5000/users', {
+                fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

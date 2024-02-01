@@ -35,7 +35,7 @@ const EditRecipe = () => {
 
                     const updatedRecipes = { recipe_name, video, category, ingredients, description, recipe_photo: imgURL }
 
-                    fetch(`http://localhost:5000/recipes/${_id}`, {
+                    fetch(`https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/recipes/${_id}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'

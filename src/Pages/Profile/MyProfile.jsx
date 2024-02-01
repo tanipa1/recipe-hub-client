@@ -9,7 +9,7 @@ const MyProfile = ({ selectedUser }) => {
     const [bookmarks, setBookmarks] = useState([]);
     const {user} = useContext(AuthContext);
 
-    const url = `http://localhost:5000/recipes?email=${selectedUser.email}`;
+    const url = `https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/recipes?email=${selectedUser.email}`;
     useEffect(() => {
         fetch(url, {
             method: 'GET'
@@ -20,7 +20,7 @@ const MyProfile = ({ selectedUser }) => {
             })
     }, []);
 
-    const bookmark = 'http://localhost:5000/bookmarks';
+    const bookmark = 'https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/bookmarks';
     useEffect(() =>{
         fetch(bookmark, {
             method: 'GET'

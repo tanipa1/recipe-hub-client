@@ -24,7 +24,7 @@ const AddSeller = () => {
             location,
             description
         }
-        fetch('http://localhost:5000/sellers', {
+        fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/sellers', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

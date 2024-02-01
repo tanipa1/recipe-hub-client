@@ -30,7 +30,7 @@ const AddRecipe = () => {
                     const recipes = { recipe_name, recipe_provider, email, video, category, ingredients, description, recipe_photo: imgURL, user_photo: user?.photoURL }
                     console.log(recipes);
 
-                    fetch('http://localhost:5000/recipes', {
+                    fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/recipes', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

@@ -45,7 +45,7 @@ const Footer = () => {
                 </div>
             </footer>
             <div className='footer footer-center'>
-                <p className='font-bold'>Copyright © 2023 - All right reserved by Recipe Hub</p>
+                <p className='font-bold text-xs lg:text-base'>Copyright © 2023 - All right reserved by Recipe Hub</p>
             </div>
         </div>
     );

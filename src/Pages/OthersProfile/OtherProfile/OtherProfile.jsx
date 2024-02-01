@@ -10,7 +10,7 @@ const OtherProfile = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/users')
             .then((response) => response.json())
             .then((data) => setUsers(data));
     }, []);

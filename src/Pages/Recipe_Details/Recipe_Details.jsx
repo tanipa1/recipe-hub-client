@@ -27,7 +27,7 @@ const Recipe_Details = () => {
     useEffect(() => {
         // Only send the rating to the server when it changes
         if (rating !== 0) {
-          fetch('http://localhost:5000/ratings', {
+          fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/ratings', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const Recipe_Details = () => {
             user_name: user?.displayName,
             recipe_id: _id
         };
-        fetch('http://localhost:5000/comments', {
+        fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/comments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -80,7 +80,7 @@ const Recipe_Details = () => {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/comments')
+        fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/comments')
             .then((response) => response.json())
             .then((data) => setComments(data));
     }, [comments]);
@@ -94,7 +94,7 @@ const Recipe_Details = () => {
             video,
             user_name: user?.displayName
         }
-        fetch('http://localhost:5000/bookmarks', {
+        fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/bookmarks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

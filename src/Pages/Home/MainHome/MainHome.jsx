@@ -12,7 +12,7 @@ const MainHome = ({ rcp }) => {
     const [rating, setRating] = useState(0);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/ratings/${_id}`)
+        fetch(`https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/ratings/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setRating(data)
@@ -31,7 +31,7 @@ const MainHome = ({ rcp }) => {
             video,
             user_name: user?.displayName
         }
-        fetch('http://localhost:5000/bookmarks', {
+        fetch('https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/bookmarks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -56,7 +56,7 @@ const MainHome = ({ rcp }) => {
     };
 
     return (
-        <div className="card w-48 h-80 card-compact bg-base-100 shadow-lg">
+        <div className="card lg:w-48 w-40 h-80 card-compact bg-base-100 shadow-lg">
             <figure className="image-container  ">
                 <img className="recipe-pic h-40" src={recipe_photo} alt="Recipe" />
                 <div className="overlay">

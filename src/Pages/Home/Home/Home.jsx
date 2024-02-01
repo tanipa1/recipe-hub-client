@@ -27,7 +27,7 @@ const Home = () => {
     const [recipe, setRecipe] = useState(recipes);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/recipes?category=${category}`)
+        fetch(`https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/recipes?category=${category}`)
             .then(res => res.json())
             .then(data => {
                 setRecipe(data)
@@ -48,9 +48,19 @@ const Home = () => {
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center justify-center">
+            <div className="drawer-content grid justify-center">
+                {/* responsive sidebar */}
+            <div className=' py-2 px-2 lg:hidden items-center flex justify-between'>
+                    <div className='flex items-center gap-3'>
+                        <div>
+                            <h2 className='flex logo-title lg:text-3xl font-bold text-xl'>RECIPES</h2>
+                            <p className='font-serif text-xs lg:text-base '><small>Find Your Desired Recipes</small></p>
+                        </div>
+                    </div>
+                    <label htmlFor="my-drawer-2" tabIndex={0} role="button" className="btn btn-ghost lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20"><path fill="currentColor" fillRule="evenodd" d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" /></svg></label>
+                </div>
                 {/* Page content here */}
-                <div className="grid grid-cols-4 my-12 gap-10">
+                <div className="grid grid-cols-2 lg:grid-cols-4 my-12 lg:gap-10 gap-6 mx-1 justify-center">
                     {
                         filteredRecipe.map(rcp => <MainHome
                             key={rcp._id}
@@ -59,12 +69,10 @@ const Home = () => {
                     }
                 </div>
                 <Outlet></Outlet>
-                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-
             </div>
-            <div className="drawer-side bg-base-200">
+            <div className="drawer-side lg:bg-base-200">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="p-4 w-80 h-full text-zinc-700 ">
+                <ul className="menu p-4 lg:w-80 w-60 bg-base-200 text-zinc-700 ">
                     {/* Sidebar content here */}
                     <li><button onClick={() => setCategory('')} className="side-btn flex p-2 rounded-md items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 6h-8l-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-2.06 11L15 15.28L12.06 17l.78-3.33l-2.59-2.24l3.41-.29L15 8l1.34 3.14l3.41.29l-2.59 2.24l.78 3.33Z" /></svg>Recommendation For You</button></li>
                     <div className="divider"></div>

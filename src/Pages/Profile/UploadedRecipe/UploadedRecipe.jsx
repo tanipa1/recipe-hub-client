@@ -18,7 +18,7 @@ const UploadedRecipe = ({ recipe }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/recipes/${recipe._id}`, {
+                fetch(`https://recipe-hub-server-2nmd34o5u-tanipa1.vercel.app/recipes/${recipe._id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
