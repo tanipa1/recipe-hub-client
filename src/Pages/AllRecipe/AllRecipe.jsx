@@ -29,7 +29,7 @@ const AllRecipe = () => {
                 <div className="hero-overlay bg-black bg-opacity-40"></div>
                 <div className="hero-content text-white">
                     <div className="max-w-md">
-                        <h1 className=" text-center text-5xl font-serif font-bold">All Recipe</h1>
+                        <h1 className=" text-center lg:text-5xl text-xl font-serif font-bold">All Recipe</h1>
                     </div>
                 </div>
             </div>
@@ -42,14 +42,14 @@ const AllRecipe = () => {
             </div>
 
             {/* Tabular form */}
-            <div className="mx-20 my-12 shadow-2xl">
+            <div className="lg:mx-20 m-2 lg:my-12 shadow-2xl">
                 <table className="table w-full ">
                     {/* head */}
                     <thead>
                         <tr>
-                            <th className='font-extrabold text-base'>Recipe</th>
-                            <th className='font-extrabold text-base'>Recipe-Category</th>
-                            <th className='font-extrabold text-base'>Recipe By</th>
+                            <th className='font-extrabold text-sm lg:text-base'>Recipe</th>
+                            <th className='font-extrabold text-sm lg:text-base'>Recipe-Category</th>
+                            <th className='font-extrabold text-sm lg:text-base hidden lg:table-cell'>Recipe By</th>
                             <th></th>
                         </tr>
                     </thead>

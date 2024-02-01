@@ -9,22 +9,22 @@ const RecipeTable = ({recipe}) => {
             <tr>
                 <td>
                     <div className="flex items-center space-x-3">
-                        <div className="w-24 rounded-xl">
+                        <div className="w-24 h-24 hidden lg:flex rounded-xl">
                             <img src={recipe_photo} />
                         </div>
                         <div>
-                            <div className="font-bold">{recipe_name}</div>
+                            <div className="font-bold text-xs lg:text-lg ">{recipe_name}</div>
                         </div>
                     </div>
                 </td>
-                <td>
-                    <p className='uppercase'>{category}</p>
+                <td >
+                    <p className='lg:uppercase '>{category}</p>
                 </td>
-                <td>
+                <td className='hidden lg:table-cell'>
                     {recipe_provider}
                 </td>
                 <th>
-                    <Link to={`/recipeDetails/${_id}`}><button className="btn login btn-xs">View details</button></Link>
+                    <Link to={`/recipeDetails/${_id}`}><button className="btn login btn-xs">Details</button></Link>
                 </th>
             </tr>
         </tbody>

@@ -4,8 +4,8 @@ import logo from '../../assets/logo.png';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-black text-white">
-                <div>
+            <footer className="grid lg:grid-cols-3 gap-8 justify-center lg:justify-between p-10 bg-black text-white ">
+                <div className='grid justify-center lg:justify-start'>
                     <div className='flex gap-1 items-center justify-center'>
                         <div className='animate__animated animate__fadeInLeft w-20 lg:w-24 mask mask-squircle'><img className='' src={logo} alt="" /></div>
                         <div>
@@ -19,23 +19,27 @@ const Footer = () => {
                         <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
                     </div>
                 </div>
-                <div>
-                    <span className="font-extrabold uppercase text-[#f8cf5f]">Services</span>
-                    <Link to='/recipes' className="link link-hover">All Recipe</Link>
-                    <Link to='/addRecipe' className="link link-hover">Share Recipe</Link>
-                    <Link to='/recipeBooks' className="link link-hover">Recipe Books</Link>
+
+                <div className='grid grid-cols-2 gap-20 text-sm'>
+                    <div className='grid text-center lg:text-start'>
+                        <span className="font-bold uppercase text-[#f8cf5f] mb-2">Services</span>
+                        <Link to='/recipes' className="link link-hover">All Recipe</Link>
+                        <Link to='/addRecipe' className="link link-hover">Share Recipe</Link>
+                        <Link to='/recipeBooks' className="link link-hover">Recipe Books</Link>
+                    </div>
+                    <div className='grid text-center lg:text-start'>
+                        <span className="font-bold uppercase text-[#f8cf5f] mb-2">Company</span>
+                        <Link to='/about' className="link link-hover">About Us</Link>
+                        <Link to='/contact' className="link link-hover">Contact Us</Link>
+                        <Link to='' className="link link-hover">Terms & Policy</Link>
+                    </div>
                 </div>
-                <div>
-                    <span className="font-extrabold uppercase text-[#f8cf5f]">Company</span>
-                    <Link to='/about' className="link link-hover">About Us</Link>
-                    <Link to='/contact' className="link link-hover">Contact Us</Link>
-                    <Link to='' className="link link-hover">Terms & Policy</Link>
-                </div>
-                <div>
-                    <span className="font-extrabold uppercase text-[#f8cf5f]">Newsletter</span>
-                    <div className="form-control w-80">
-                        <label className="label">
-                            <span>Enter your email address</span>
+
+                <div className='text-center lg:text-start text-sm'>
+                    <span className="font-bold uppercase text-[#f8cf5f]">Newsletter</span>
+                    <div className="form-control w-80 ">
+                        <label className="label ">
+                            <span >Enter your email address</span>
                         </label>
                         <div className="relative">
                             <input type="email" placeholder="username@site.com" className="input text-black input-bordered w-full pr-16" />
