@@ -1,0 +1,14 @@
+.hero_overlay {
+    height: 100% !important;
+    width: 100% !important;
+    background-color: hsl(var(--n) / var(--tw-bg-opacity)) !important;
+    --tw-bg-opacity: 0.9 !important;
+}
+
+.heros {
+    display: grid;
+    width: 100%;
+    place-items: center;
+    background-size: cover;
+    background-position: center;
+}

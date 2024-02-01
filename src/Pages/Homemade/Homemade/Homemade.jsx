@@ -14,7 +14,7 @@ const Homemade = () => {
             {/* banner */}
             <div className="hero p-7 mb-8" style={{ backgroundImage: 'url(https://img.freepik.com/free-photo/vegetables-set-left-black-slate_1220-685.jpg?w=1380&t=st=1693984306~exp=1693984906~hmac=93d548ed45bed0e89611e7f23de3279a70f5d7f6a237ab89bea7a7c227c9885f)' }}>
                 <div className="hero-overlay bg-black bg-opacity-40"></div>
-                <div className="hero-content text-white -ml-96">
+                <div className="hero-content text-white lg:-ml-96">
                     <div className="max-w-md">
                         <h1 className="text-center text-4xl font-serif font-bold">Homemade Food Sellers</h1>
                     </div>
