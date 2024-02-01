@@ -18,12 +18,12 @@ const Grocery = () => {
                 <div className="hero-overlay bg-black bg-opacity-40"></div>
                 <div className="hero-content text-white">
                     <div className="max-w-md">
-                        <h1 className=" text-center text-5xl font-serif font-bold">Grocery <span className='text-base'>Fresh Choices, Every Day!</span></h1>
+                        <h1 className="text-center lg:text-5xl text-2xl font-serif font-extrabold">Grocery <span className='lg:text-base text-xs'>Fresh Choices, Every Day!</span></h1>
                     </div>
                 </div>
             </div>
             {/* banner */}
-            <div className='p-2 grid grid-cols-2 gap-8'>
+            <div className='p-2 grid lg:grid-cols-2 gap-8'>
                 <div className='flex items-center justify-between px-8 py-2 box'>
                     <a className='font-bold text-lg' href="https://chaldal.com/" target="_blank">Chaldal</a>
                     <img className='w-20' src={chaldal} alt="" />
@@ -33,7 +33,7 @@ const Grocery = () => {
                     <img className='w-20' src={shawpno} alt="" />
                 </div>
             </div>
-            <div className='p-2 grid grid-cols-2 gap-8'>
+            <div className='p-2 grid lg:grid-cols-2 gap-8'>
                 <div className='flex items-center justify-between px-8 py-2 box'>
                     <a className='font-bold text-lg' href="https://www.daraz.com.bd/dmart/" target="_blank">Daraz Mart</a>
                     <img className='w-20' src={daraz} alt="" />
@@ -43,7 +43,7 @@ const Grocery = () => {
                     <img className='w-24' src={panda} alt="" />
                 </div>
             </div>
-            <div className='p-2 grid grid-cols-2 gap-8'>
+            <div className='p-2 grid lg:grid-cols-2 gap-8'>
                 <div className='flex items-center justify-between px-8 py-3 box'>
                     <a className='font-bold text-lg' href="https://agorasuperstores.com/" target="_blank">Agora</a>
                     <img className='w-20' src={agora} alt="" />
@@ -53,7 +53,7 @@ const Grocery = () => {
                     <img className='w-24' src={meena} alt="" />
                 </div>
             </div>
-            <div className='p-2 grid grid-cols-2 gap-8'>
+            <div className='p-2 grid lg:grid-cols-2 gap-8'>
                 <div className='flex items-center justify-between px-8 py-3 box'>
                     <a className='font-bold text-lg' href="https://www.unimart.online/" target="_blank">Unimart</a>
                     <img className='w-28' src={unimart} alt="" />

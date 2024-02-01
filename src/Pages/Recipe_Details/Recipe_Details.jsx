@@ -121,22 +121,22 @@ const Recipe_Details = () => {
     return (
         <div>
             {/* banner */}
-            <div className="hero p-7 mb-20" style={{ backgroundImage: 'url(https://img.freepik.com/free-photo/traditional-salad-with-pieces-medium-rare-grilled-ahi-tuna-sesame-with-fresh-vegetable-salad-rice-plate_2829-18465.jpg?w=1380&t=st=1693229377~exp=1693229977~hmac=aeb302cfc4ece0134b57f76e814cbe0db42fa3dffe3f2f05eb9cc4090c678ef2)' }}>
+            <div className="hero p-7 mb-8 lg:mb-20" style={{ backgroundImage: 'url(https://img.freepik.com/free-photo/traditional-salad-with-pieces-medium-rare-grilled-ahi-tuna-sesame-with-fresh-vegetable-salad-rice-plate_2829-18465.jpg?w=1380&t=st=1693229377~exp=1693229977~hmac=aeb302cfc4ece0134b57f76e814cbe0db42fa3dffe3f2f05eb9cc4090c678ef2)' }}>
                 <div className="hero-overlay bg-black bg-opacity-40"></div>
                 <div className="hero-content text-white">
                     <div className="max-w-md">
-                        <h1 className=" text-center text-5xl font-serif font-bold">{recipe_name}</h1>
+                        <h1 className=" text-center lg:text-5xl text-xl font-serif font-bold">{recipe_name}</h1>
                     </div>
                 </div>
             </div>
             {/* banner */}
 
-            <div className='flex px-12 justify-center gap-20'>
+            <div className='grid lg:grid-cols-2 lg:px-12 px-8 justify-center lg:gap-20 gap-8'>
                 <div>
                     <img className='rounded-2xl border-0 m-0' src={recipe_photo} alt="" />
                 </div>
-                <div className='w-1/2'>
-                    <h2 className='font-bold font-serif text-4xl mb-5'>{recipe_name}</h2>
+                <div className='lg:w-1/2'>
+                    <h2 className='font-bold font-serif lg:text-4xl text-xl mb-5'>{recipe_name}</h2>
                     <p><span className='font-bold'>Category:</span> {category}</p>
                     <button className='mt-3 flex cursor-pointer items-center' onClick={handleBookmark} >
                         <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24"><path fill="#f8cf5f" d="M19 3H5v18l7-3l7 3V3z" /></svg>
@@ -207,7 +207,7 @@ const Recipe_Details = () => {
                 <div className='flex gap-3 '>
                     <img className='w-12 rounded-full mt-5' src={user?.photoURL} alt="" />
                     <form onSubmit={submitComment} className='flex items-center gap-3'>
-                        <input type="text" name='comment' placeholder='Add a Comment...' className='w-96 mt-5 input input-bordered border-b-2 border-l-0 border-r-0 border-t-0 border-black' id="" />
+                        <input type="text" name='comment' placeholder='Add a Comment...' className='lg:w-96 mt-5 input input-bordered border-b-2 border-l-0 border-r-0 border-t-0 border-black' id="" />
                         <button type='submit' className='mt-8'><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 15 16"><path fill="currentColor" d="M12.49 7.14L3.44 2.27c-.76-.41-1.64.3-1.4 1.13l1.24 4.34c.05.18.05.36 0 .54l-1.24 4.34c-.24.83.64 1.54 1.4 1.13l9.05-4.87a.98.98 0 0 0 0-1.72Z" /></svg></button>
                     </form>
                 </div>
