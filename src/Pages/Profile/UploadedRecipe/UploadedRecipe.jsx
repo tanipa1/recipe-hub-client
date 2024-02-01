@@ -38,14 +38,16 @@ const UploadedRecipe = ({ recipe }) => {
 
 
     return (
-        <div className='flex mb-8 items-center gap-10 bg-gray-200 pr-5'>
-            <img className='w-48 h-36' src={recipe_photo} alt="" />
-            <div className='grow'>
-                <h1 className='font-bold font-serif text-2xl'>{recipe_name}</h1>
-                <p className='uppercase'><span className='font-bold'>Category: </span>{category}</p>
-                <Link to={`/recipeDetails/${_id}`}>
-                    <button className='btn btn-sm login mt-2'>
-                        Details
+        <div className='flex  mb-8 items-center gap-3 bg-gray-200 pr-8 lg:px-0 lg:pr-5'>
+            <img className='lg:w-36 lg:h-36 w-24' src={recipe_photo} alt="" />
+            <div className='flex justify-between gap-16 lg:gap-0 items-center lg:grid'>
+                <div>
+                    <h1 className='lg:font-bold font-serif lg:text-2xl text-lg'>{recipe_name}</h1>
+                    <p className='uppercase hidden lg:flex'><span className='font-bold'>Category: </span>{category}</p>
+                </div>
+                <Link className='lg:ml-0 flex' to={`/recipeDetails/${_id}`}>
+                    <button className='btn lg:btn-sm btn-xs  login mt-2'>
+                        <span className='hidden lg:flex'>Details</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z" /></svg>
                     </button>
                 </Link>

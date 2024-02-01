@@ -27,15 +27,15 @@ const OtherProf = ({user}) => {
             </div>
             {/* banner */}
 
-            <div className='flex justify-center pl-8 gap-24 lg:flex-row'>
-                <div className='w-2/3 mt-10'>
+            <div className='lg:flex grid justify-center lg:pl-8 lg:gap-24 lg:flex-row'>
+                <div className='lg:w-2/3 mx-8 mt-10'>
                     <Tabs>
-                        <TabList className='lg:flex justify-start gap-5 lg:mx-0 mx-20 mb-8'>
+                        <TabList className='lg:flex justify-start gap-5 lg:mx-0 mx-8 mb-8'>
                             <Tab><button className='btn bg-black text-white'>Uploaded Recipe</button></Tab>
                         </TabList>
 
-                        <TabPanel>
-                            <div className='pr-16'>
+                        <TabPanel className="px-8 lg:px-0">
+                            <div className=''>
                                 {
                                     uploadedRecipe.map(recipe => <UploadedRecipe
                                         key={recipe._id}
@@ -46,7 +46,7 @@ const OtherProf = ({user}) => {
                         </TabPanel>
                     </Tabs>
                 </div>
-                <div className="card w-80 bg-opacity-60 shadow-xl -top-11">
+                <div className="card hidden lg:flex w-80 bg-opacity-60 shadow-xl -top-11">
                     <div className="avatar w-50 mx-auto">
                         <div className="w-28 rounded-full">
                             <img src={user.photo} />
